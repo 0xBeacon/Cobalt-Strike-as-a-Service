@@ -29,5 +29,29 @@ Running setup.sh will ask the following questions:
 **Note:** _There is no vetting of information provided, so make sure it's correct._
 
 
-
+```
+root@teamserver:~# ./setup.sh
+[+] What is your Cobalt Strike TeamServer directory?
+/root/cobaltstrike
+[+] What is the TeamServer listening IP?
+127.0.0.1
+[+] What is the TeamServer Password?
+password123
+[+] What is the path to your c2 profile?
+/root/cobaltstrike/c2.profile
+[+] Does this TeamServer startup command look correct?
+/root/cobaltstrike/teamserver 127.0.0.1 password123 /root/cobaltstrike/c2.profile
+[+] Enter (y/n)
+y
+○ teamserver.service - Cobalt Strike Team Server
+     Loaded: loaded (/etc/systemd/system/teamserver.service; disabled; vendor preset: enabled)
+     Active: inactive (dead)
+● teamserver.service - Cobalt Strike Team Server
+     Loaded: loaded (/etc/systemd/system/teamserver.service; disabled; vendor preset: enabled)
+     Active: activating (auto-restart) (Result: exit-code) since Wed 2022-11-16 17:41:27 UTC; 27ms ago
+    Process: 2273 ExecStart=/root/cobaltstrike/teamserver 127.0.0.1 password123 /root/cobaltstrike/c2.profile (code=exited, status=203/EXEC)
+   Main PID: 2273 (code=exited, status=203/EXEC)
+        CPU: 828us
+Created symlink /etc/systemd/system/multi-user.target.wants/teamserver.service → /etc/systemd/system/teamserver.service.
+```
 
